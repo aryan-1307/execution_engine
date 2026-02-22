@@ -1,0 +1,8 @@
+This project is a quantitative system designed to analyze how large-scale buy or sell orders impact the stock market. In  trading, executing a significant number of shares cannot be done instantly without distorting the market price and increasing costs. This project utilizes real-world US equity data to simulate these dynamics, allowing for a direct comparison between different execution strategies to see which method minimizes these expenses.
+The framework models the underlying physics of the market, such as the bid-ask spread and the permanent price shifts caused by large trades. It evaluates traditional scheduling methods, such as trading at a constant rate, against more advanced mathematical models like Almgren-Chriss. The goal is to find the optimal balance between trading quickly to avoid market volatility and trading slowly to avoid self-inflicted price impact.
+running the program:
+  Execute the simulation: The entire pipeline is automated through a single entry point. There is no need to run individual modules separately:
+   python main.py
+Output structure:
+Upon execution, the system displays a live log of the data ingestion process for symbols like AAPL, MSFT, and NVDA. Once the simulations are complete, a summary table is printed to the terminal.
+This table lists each asset alongside the performance of various strategies (TWAP, VWAP, and Almgren-Chriss). The key metric shown is Implementation Shortfall, which represents the execution cost in basis points. A lower value indicates a more efficient strategy. Additionally, a file named final_execution_analysis.csv is generated in the main folder, providing a detailed, row-by-row breakdown of every simulated trade for further analysis in Excel or other data tools.
